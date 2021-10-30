@@ -1,0 +1,30 @@
+{
+    "scriptFile": "__init__.py",
+    "bindings": [{
+            "authLevel": "anonymous",
+            "route": "queuefunc",
+            "type": "httpTrigger",
+            "direction": "in",
+            "name": "req",
+            "methods": [
+                "get",
+                "post"
+            ]
+        },
+        {
+            "_comment": "for outputs of request",
+            "type": "http",
+            "direction": "out",
+            "name": "$return"
+        },
+        {
+            "_comment": "for outputs of msg queues",
+            "type": "queue",
+            "name": "msg",
+            "direction": "out",
+            "queueName": "queuefunc01",
+            "connection": "storage_connect"
+
+        }
+    ]
+}
